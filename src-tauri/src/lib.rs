@@ -6,7 +6,6 @@ pub fn run() {
         .plugin(tauri_plugin_opener::init())
         .plugin(tauri_plugin_shell::init())
         .invoke_handler(tauri::generate_handler![
-            commands::greet,
             commands::minimize,
             commands::toggle_maximize,
             commands::close,

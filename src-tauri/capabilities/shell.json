@@ -9,8 +9,8 @@
       "https://*.twitch.tv",
       "https://*.youtube.com",
       "https://*.google.com",
-      "https://7tv.app",
-      "https://*.7tv.app"
+      "https://discord.com",
+      "https://*.discord.com"
     ],
     "permissions": ["core:shell:allow-open"]
   }

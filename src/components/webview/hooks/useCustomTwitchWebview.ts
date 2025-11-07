@@ -1,4 +1,5 @@
 import { invoke } from "@tauri-apps/api/core";
+import { resolveResource } from "@tauri-apps/api/path";
 import { WebviewWindow } from "@tauri-apps/api/webviewWindow";
 import { useState } from "react";
 
@@ -13,7 +14,9 @@ export const useCustomTwitch = () => {
       decorations: true,
     });
 
-    twitchWebview.once("tauri://created", () => {
+    twitchWebview.once("tauri://created", async () => {
+      const iconPath = await resolveResource("icons/twitch-icon.png");
+      await twitchWebview.setIcon(iconPath).catch((err) => console.error(err));
       setIsTwitchOpen(true);
       invoke("hide");
     });

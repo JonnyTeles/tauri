@@ -1,11 +1,6 @@
 use tauri::{command, AppHandle, Window};
 
 #[command]
-pub fn greet(name: &str) -> String {
-    format!("Hello, {}! You've been greeted from Rust!", name)
-}
-
-#[command]
 pub fn minimize(window: Window) {
     let _ = window.minimize(); // OU window.minimize().ok();
 }

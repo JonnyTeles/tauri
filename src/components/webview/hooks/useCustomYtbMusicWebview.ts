@@ -1,4 +1,5 @@
 import { invoke } from "@tauri-apps/api/core";
+import { resolveResource } from "@tauri-apps/api/path";
 import { WebviewWindow } from "@tauri-apps/api/webviewWindow";
 import { useState } from "react";
 
@@ -13,7 +14,11 @@ export const useCustomYtbMusic = () => {
       decorations: true,
     });
 
-    ytbMusicWebview.once("tauri://created", () => {
+    ytbMusicWebview.once("tauri://created", async () => {
+      const iconPath = await resolveResource("icons/ytb-music-icon.png");
+      await ytbMusicWebview
+        .setIcon(iconPath)
+        .catch((err) => console.error(err));
       setIsYtbMusicOpen(true);
       invoke("hide");
     });

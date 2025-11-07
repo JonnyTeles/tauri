@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "twitch-desktop",
+  "productName": "jurema-desktop",
   "version": "0.1.0",
-  "identifier": "com.windows.twitch-desktop",
+  "identifier": "com.windows.jurema-desktop",
   "build": {
     "beforeDevCommand": "npm run dev",
     "devUrl": "http://localhost:1420",
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "Twitch Desktop",
+        "title": "Jurema Desktop",
         "width": 800,
         "height": 600,
         "decorations": false
@@ -28,7 +28,12 @@
     "targets": "all",
     "icon": [
       "icons/jurema-icon.png",
-      "icons/jurema.ico"
-    ]
+      "icons/jurema.ico",
+      "icons/twitch-icon.png",
+      "icons/ytb-music-icon.png",
+      "icons/discord-icon.png",
+      "icons/youtube-icon.png"
+    ],
+    "resources": ["icons/*"]
   }
 }
